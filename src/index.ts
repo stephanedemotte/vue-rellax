@@ -21,7 +21,7 @@ const destroy = (el: HTMLElement) => {
   if (!instance) {
     return
   }
-  instance.destroy()
+  //instance.destroy()
 }
 
 const unbind: DirectiveFunction = el => {

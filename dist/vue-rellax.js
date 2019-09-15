@@ -349,6 +349,9 @@
 	var instanceMap = new WeakMap();
 	var inserted = function (el, _a, vm) {
 	    var value = _a.value;
+	    if (value === false) {
+	        return;
+	    }
 	    instanceMap.set(el, new rellax(el, value));
 	};
 	var destroy = function (el) {
@@ -356,7 +359,7 @@
 	    if (!instance) {
 	        return;
 	    }
-	    instance.destroy();
+	    //instance.destroy()
 	};
 	var unbind = function (el) {
 	    destroy(el);
@@ -364,6 +367,9 @@
 	var update = function (el, _a, vm) {
 	    var value = _a.value;
 	    destroy(el);
+	    if (value === false) {
+	        return;
+	    }
 	    instanceMap.set(el, new rellax(el, value));
 	};
 	var install = function (InjectedVue) {
