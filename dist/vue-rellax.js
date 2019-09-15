@@ -359,10 +359,10 @@
 	    if (!instance) {
 	        return;
 	    }
-	    //instance.destroy()
+	    instance.destroy();
 	};
 	var unbind = function (el) {
-	    destroy(el);
+	    // destroy(el)
 	};
 	var update = function (el, _a, vm) {
 	    var value = _a.value;
